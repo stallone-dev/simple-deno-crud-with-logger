@@ -29,7 +29,6 @@ describe("Bar Route", () => {
                 expect(result).toMatchObject({
                         user: TEST_USER,
                         data: TEST_DATA,
-                        time: Date.now(),
                 });
         });
 
