@@ -5,11 +5,11 @@ import { getUserLogApi } from "~api/get-user-log.api.ts";
 
 export { getUserLogRoute };
 
-const getUserLogRoute = ({ request, response }: Context) => {
+const getUserLogRoute = async ({ request, response }: Context) => {
         // deno-lint-ignore no-explicit-any
         const { user } = request.body as any;
 
-        const result = getUserLogApi(user);
+        const result = await getUserLogApi(user);
 
         response.body = JSON.stringify(result);
 };

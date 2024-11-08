@@ -5,9 +5,9 @@ import { fooApi } from "~api/foo.api.ts";
 
 export { fooRoute };
 
-const fooRoute = ({ request, response }: Context) => {
+const fooRoute = async ({ request, response }: Context) => {
         // deno-lint-ignore no-explicit-any
-        const { user, data } = request.body as any;
+        const { user, data } = await request.body.json() as any;
 
         const result = fooApi(user, data);
 
