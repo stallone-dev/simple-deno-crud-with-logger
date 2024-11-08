@@ -7,6 +7,7 @@
                 "~logger": "./config/logger.schema.ts",
                 "~database": "./database/controller.db.ts",
                 "~route/": "./core/routes/",
+                "~api/": "./core/api/",
 
                 "@logtape": "jsr:@logtape/logtape@^0.7.1",
                 "@oak": "jsr:@oak/oak@^17.1.3"
