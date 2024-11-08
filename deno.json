@@ -11,6 +11,7 @@
         },
         "unstable": ["kv", "fs"],
         "imports": {
+                "~configLogger": "./config/logtape.config.ts",
                 "~logger": "./config/logger.schema.ts",
                 "~database": "./database/controller.db.ts",
                 "~route/": "./core/routes/",
