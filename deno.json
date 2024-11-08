@@ -1,6 +1,13 @@
 {
         "tasks": {
-                "dev": "deno -A --watch ./core/main.ts"
+                "dev": "deno -A --watch ./core/main.ts",
+
+                "coverage:report": "deno task coverage ; deno coverage ./coverage-log --lcov > ./coverage/coverage.lcov ; genhtml -o ./coverage ./coverage/coverage.lcov",
+                "coverage:dev": "deno task coverage ; deno coverage ./coverage-log",
+                "coverage": "deno task test --reporter=dot --coverage=./coverage-log",
+
+                "test:dev": "deno task test --reporter=dot --watch",
+                "test": "deno test -A"
         },
         "unstable": ["kv", "fs"],
         "imports": {
@@ -10,7 +17,10 @@
                 "~api/": "./core/api/",
 
                 "@logtape": "jsr:@logtape/logtape@^0.7.1",
-                "@oak": "jsr:@oak/oak@^17.1.3"
+                "@oak": "jsr:@oak/oak@^17.1.3",
+
+                "@expect": "jsr:@std/expect@^1.0.7",
+                "@testing": "jsr:@std/testing@^1.0.4/bdd"
         },
 
         "fmt": {
