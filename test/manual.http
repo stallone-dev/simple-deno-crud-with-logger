@@ -1,0 +1,31 @@
+# Create by Stallone L. de Souza (@stallone-dev) - 2024 - License: CC0 1.0 Universal
+
+@url = http://localhost:8080
+
+GET {{url}}/ HTTP/1.1
+
+###
+POST {{url}}/bar HTTP/1.1
+Content-Type: "application/json"
+
+{
+        "user": "Stallone",
+        "data": {"bbbb":"yyyy"}
+}
+
+###
+POST {{url}}/foo HTTP/1.1
+Content-Type: "application/json"
+
+{
+        "user": "Stallone",
+        "data": {"aaaaa":"zzzzz"}
+}
+
+###
+GET {{url}}/getlog HTTP/1.1
+Content-Type: "application/json"
+
+{
+        "user": "Stallone"
+}
