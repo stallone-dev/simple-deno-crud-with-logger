@@ -1,0 +1,56 @@
+{
+        "tasks": {
+                "dev": "deno -A --watch ./core/main.ts"
+        },
+        "unstable": ["kv", "fs"],
+        "imports": {
+                "~logger": "./config/logger.schema.ts",
+                "~database": "./database/controller.db.ts",
+                "~route/": "./core/routes/",
+
+                "@logtape": "jsr:@logtape/logtape@^0.7.1",
+                "@oak": "jsr:@oak/oak@^17.1.3"
+        },
+
+        "fmt": {
+                "exclude": ["**/build/"],
+                "lineWidth": 120,
+                "indentWidth": 8,
+                "useTabs": false,
+                "semiColons": true,
+                "singleQuote": false,
+                "proseWrap": "preserve"
+        },
+
+        "lint": {
+                "exclude": ["!*.ts"],
+                "rules": {
+                        "tags": ["recommended"],
+                        "include": [
+                                "default-param-last",
+                                "eqeqeq",
+                                "explicit-function-return-type",
+                                "explicit-module-boundary-types",
+                                "guard-for-in",
+                                "no-await-in-loop",
+                                "no-boolean-literal-for-arguments",
+                                "no-console",
+                                "no-const-assign",
+                                "no-eval",
+                                "no-external-import",
+                                "no-implicit-declare-namespace-export",
+                                "no-inferrable-types",
+                                "no-non-null-asserted-optional-chain",
+                                "no-non-null-assertion",
+                                "no-self-compare",
+                                "no-sparse-arrays",
+                                "no-sync-fn-in-async-fn",
+                                "no-throw-literal",
+                                "no-undef",
+                                "single-var-declarator",
+                                "triple-slash-reference",
+                                "verbatim-module-syntax"
+                        ]
+                }
+        }
+}
