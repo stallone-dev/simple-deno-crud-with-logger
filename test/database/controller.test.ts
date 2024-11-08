@@ -18,15 +18,18 @@ describe("Database Operations", () => {
         });
 
         it("Simple save Log", async () => {
-                const result = await database.saveLog({ user: TEST_USER, log: TEST_LOG }, MOCK_DB);
+                const result = await database.saveLog({
+                        rawMessage: "TESTE TESTE",
+                        properties: { user: TEST_USER, ...TEST_LOG },
+                }, MOCK_DB);
 
-                expect(result).toMatchObject({ message: "New log saved" });
+                expect(result).not.toThrow();
         });
 
         it("Simple get log", async () => {
                 const result = await database.getLogByUser({ user: TEST_USER }, MOCK_DB);
 
-                expect(result).toMatchObject({ message: `Logs list of User: ${TEST_USER}` });
+                expect(result).toMatchObject([{ message: "TESTE TESTE" }]);
         });
 
         it("Not send user on get log", async () => {

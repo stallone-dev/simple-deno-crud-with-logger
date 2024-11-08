@@ -2,30 +2,31 @@
 
 @url = http://localhost:8080
 
+
+# Access "basic" route
 GET {{url}}/ HTTP/1.1
 
 ###
+# Access "barApi" route
 POST {{url}}/bar HTTP/1.1
 Content-Type: "application/json"
 
 {
-        "user": "Stallone",
+        "user": "TESTER",
         "data": {"bbbb":"yyyy"}
 }
 
 ###
+# Access "fooApi" route
 POST {{url}}/foo HTTP/1.1
 Content-Type: "application/json"
 
 {
-        "user": "Stallone",
+        "user": "TESTER",
         "data": {"aaaaa":"zzzzz"}
 }
 
 ###
-GET {{url}}/getlog HTTP/1.1
-Content-Type: "application/json"
+# Get user log registry
+get {{url}}/getlog/TESTER HTTP/1.1
 
-{
-        "user": "Stallone"
-}
