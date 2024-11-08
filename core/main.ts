@@ -2,8 +2,11 @@
 
 import { Application } from "@oak";
 import { mainRoute } from "./router.ts";
+import logtapeConfig from "~configLogger";
 
 const PORT = Number(Deno.env.get("APP_PORT")) || 8080;
+
+await logtapeConfig();
 
 const app = new Application();
 

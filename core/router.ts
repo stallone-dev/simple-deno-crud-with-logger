@@ -10,6 +10,6 @@ export { mainRoute };
 
 const mainRoute = new Router()
         .get("/", basicRoute)
-        .post("/foo", fooRoute)
-        .post("/bar", barRoute)
-        .get("/getlog", getUserLogRoute);
+        .post("/foo", await fooRoute)
+        .post("/bar", await barRoute)
+        .get("/getlog/:user", await getUserLogRoute);
