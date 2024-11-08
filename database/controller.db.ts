@@ -1,5 +1,5 @@
 // Create by Stallone L. de Souza (@stallone-dev) - 2024 - License: CC0 1.0 Universal
-// deno-lint-ignore-file no-unused-vars explicit-function-return-type no-explicit-any
+// deno-lint-ignore-file no-unused-vars explicit-function-return-type no-explicit-any ban-unused-ignore
 
 export { database };
 
