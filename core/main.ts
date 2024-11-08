@@ -3,11 +3,14 @@
 import { Application } from "@oak";
 import { mainRoute } from "./router.ts";
 
-const PORT = Number(Deno.env.get("APP_PORT")) ?? 8080;
+const PORT = Number(Deno.env.get("APP_PORT")) || 8080;
 
 const app = new Application();
 
 app.use(mainRoute.routes());
 app.use(mainRoute.allowedMethods());
+
+// deno-lint-ignore no-console
+console.log(`Deno with logger example: http://localhost:${PORT}`);
 
 await app.listen({ port: PORT });
